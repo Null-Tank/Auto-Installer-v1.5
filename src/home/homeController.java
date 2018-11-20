@@ -44,9 +44,9 @@ import static install.installController.setSoftwaresList;
 public class homeController {
     private Data data = new Data();
 
-    private GridPane softwareDisplay = new GridPane();
+    public static GridPane softwareDisplay = new GridPane();
 
-    private static List softwareToBeInstalled =  new ArrayList();
+    public static List softwareToBeInstalled =  new ArrayList();
 
     private ObjectMapper mapper = new ObjectMapper();
 
@@ -177,6 +177,7 @@ public class homeController {
         Pane softwareContainer = new Pane();
         softwareContainer.setStyle("-fx-background-color: #eaeaea;");
         softwareContainer.setPrefSize(200.0,230.0);
+        softwareContainer.setId((program.name).toString());
 
         // Software Image
         ImageView softwareImgContainer = new ImageView();

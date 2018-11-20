@@ -6,19 +6,17 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 import server.Program;
 import server.Data;
@@ -27,6 +25,8 @@ import java.io.IOException;
 import java.util.List;
 import com.dropbox.core.DbxException;
 import com.fasterxml.jackson.core.JsonProcessingException;
+
+import static home.homeController.softwareToBeInstalled;
 
 
 public class installController {
@@ -120,7 +120,21 @@ public class installController {
 
             @Override
             public void handle(MouseEvent event) {
-                System.out.println("CLICK! :D");
+                softwareList.remove(program);
+                softwareToBeInstalled.remove(program);
+                System.out.println("removed: " + program);
+
+                GridPane homeSoftwareDisplay = home.homeController.softwareDisplay;
+
+                for(int i = 0; i < homeSoftwareDisplay.getChildren().size(); i++){
+
+                    if(homeSoftwareDisplay.getChildren().get(i).getId().equals((program.name).toString())){
+                        System.out.println("Found: " + (program.name).toString());
+                    }else{
+                        System.out.println("id: " + homeSoftwareDisplay.getChildren().get(i).getId() + " & program-name: " + (program.name).toString());
+                    }
+                }
+
             }
         });
 
@@ -178,7 +192,6 @@ public class installController {
         softwareListContainer.setPrefWidth(1280.0);
         softwareListContainer.setPrefHeight(128.0);
         softwareListContainer.setLayoutY(72.0);
-        softwareListContainer.setStyle("-fx-background-color: white;");
         softwareListContainer.setSpacing(0.0);
 
 
