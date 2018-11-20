@@ -151,15 +151,14 @@ public class installController {
 
         Pane softwareNode = null;
 
+        softwareListContainer.setPrefHeight(128.0 * softwareList.size());
+
         try{
             for (int i = 0; i < softwareList.size(); i++) {
                 Object selectedProgram = softwareList.get(i);
                 String programJSON = mapper.writeValueAsString(selectedProgram);
                 Program program = mapper.readValue(programJSON, Program.class);
                 softwareNode =  creatSelectedSoftwareNode(program);
-
-                softwareListContainer.setVgrow(softwareNode, Priority.NEVER);
-
                 softwareListContainer.getChildren().add(softwareNode);
             }
 
@@ -176,10 +175,9 @@ public class installController {
 
     @FXML
     protected void initialize() {
-
+        softwareListContainer.setPrefWidth(1280.0);
+        softwareListContainer.setPrefHeight(128.0);
         softwareListContainer.setLayoutY(72.0);
-        softwareListContainer.setPrefHeight(593.0);
-        softwareListContainer.setPrefHeight(1280.0);
         softwareListContainer.setStyle("-fx-background-color: white;");
         softwareListContainer.setSpacing(0.0);
 
