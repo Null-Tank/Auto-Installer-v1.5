@@ -80,7 +80,7 @@ public class installController {
         System.out.println("Routing to softwares..");
     }
 
-    public static Pane creatSelectedSoftwareNode(Program program){
+    public static Pane createSelectedSoftwareNode(Program program, Object selectedProgram){
 
         // Selected Software
         Pane selectedSoftware = new Pane();
@@ -120,21 +120,12 @@ public class installController {
 
             @Override
             public void handle(MouseEvent event) {
-                softwareList.remove(program);
-                softwareToBeInstalled.remove(program);
-                System.out.println("removed: " + program);
-
-                GridPane homeSoftwareDisplay = home.homeController.softwareDisplay;
-
-                for(int i = 0; i < homeSoftwareDisplay.getChildren().size(); i++){
-
-                    if(homeSoftwareDisplay.getChildren().get(i).getId().equals((program.name).toString())){
-                        System.out.println("Found: " + (program.name).toString());
-                    }else{
-                        System.out.println("id: " + homeSoftwareDisplay.getChildren().get(i).getId() + " & program-name: " + (program.name).toString());
-                    }
-                }
-
+                softwareList.remove(selectedProgram);
+                softwareToBeInstalled.remove(selectedProgram);
+                System.out.println("removed: " + selectedProgram);
+                System.out.println("softwareList[] = "+ softwareList);
+                System.out.println("softwareToBeInstalled[] =" + softwareToBeInstalled);
+                displaySelectedSoftware(softwareListContainer);
             }
         });
 
@@ -144,7 +135,7 @@ public class installController {
         Image softwareImg = new Image("./icons/" + program.img_dir);
         softwareImgContainer.setImage(softwareImg);
 
-        System.out.println("Issue loading Image? " + softwareImg.isError());
+        //System.out.println("Issue loading Image? " + softwareImg.isError());
 
         softwareImgContainer.setFitHeight(128.0);
         softwareImgContainer.setFitWidth(128.0);
@@ -172,7 +163,7 @@ public class installController {
                 Object selectedProgram = softwareList.get(i);
                 String programJSON = mapper.writeValueAsString(selectedProgram);
                 Program program = mapper.readValue(programJSON, Program.class);
-                softwareNode =  creatSelectedSoftwareNode(program);
+                softwareNode =  createSelectedSoftwareNode(program, selectedProgram);
                 softwareListContainer.getChildren().add(softwareNode);
             }
 

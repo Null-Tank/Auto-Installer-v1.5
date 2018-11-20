@@ -227,7 +227,10 @@ public class homeController {
                 }
                 setSoftwaresList(softwareToBeInstalled);
             }
+
         });
+
+
 
         softwareContainer.getChildren().addAll(softwareSelectionCheckBox, softwareName, softwareImgContainer);
 
