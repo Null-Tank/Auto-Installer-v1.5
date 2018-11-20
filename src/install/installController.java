@@ -18,6 +18,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 import server.Program;
 import server.Data;
@@ -84,8 +85,10 @@ public class installController {
         // Selected Software
         Pane selectedSoftware = new Pane();
         selectedSoftware.setPrefHeight(128.0);
-        selectedSoftware.setPrefHeight(1280.0);
-        selectedSoftware.setStyle("-fx-background-color: #F5F5F5; -fx-border-color: #DCDCDC; -fx-border-width: 0 0 2 0;");
+        selectedSoftware.setMaxWidth(1280.0);
+        selectedSoftware.setMaxHeight(128.0);
+        selectedSoftware.setMaxWidth(1280.0);
+        selectedSoftware.setStyle("-fx-background-color: #f2f2f2; -fx-border-color: #DCDCDC; -fx-border-width: 0 0 2 0;");
 
         Text softwareName = new Text();
         softwareName.setLayoutX(140.0);
@@ -140,7 +143,7 @@ public class installController {
         return selectedSoftware;
     }
 
-    public static void displaySelectedSoftware(Pane softwareListContainer){
+    public static void displaySelectedSoftware(VBox softwareListContainer){
 
         softwareListContainer.getChildren().clear();
 
@@ -154,6 +157,9 @@ public class installController {
                 String programJSON = mapper.writeValueAsString(selectedProgram);
                 Program program = mapper.readValue(programJSON, Program.class);
                 softwareNode =  creatSelectedSoftwareNode(program);
+
+                softwareListContainer.setVgrow(softwareNode, Priority.NEVER);
+
                 softwareListContainer.getChildren().add(softwareNode);
             }
 
@@ -174,8 +180,9 @@ public class installController {
         softwareListContainer.setLayoutY(72.0);
         softwareListContainer.setPrefHeight(593.0);
         softwareListContainer.setPrefHeight(1280.0);
-        softwareListContainer.setStyle("-fx-background-color: #D3D3D3;");
+        softwareListContainer.setStyle("-fx-background-color: white;");
         softwareListContainer.setSpacing(0.0);
+
 
         scroll_pane.setContent(softwareListContainer);
 
