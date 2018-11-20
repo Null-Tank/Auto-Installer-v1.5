@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="install.installController">
+   <children>
+      <Pane prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #fff;" stylesheets="@../styles.css">
+         <children>
+            <Pane prefHeight="72.0" prefWidth="1280.0" style="-fx-background-color: #00b6ff;">
+               <children>
+                  <Pane layoutX="213.0" onMouseClicked="#routeToSoftwares" prefHeight="72.0" prefWidth="426.0" styleClass="navBarCategory">
+                     <children>
+                        <Text fill="WHITE" layoutX="53.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Softwares" textAlignment="CENTER" wrappingWidth="320.0">
+                           <font>
+                              <Font name="Abel Regular" size="29.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="641.0" prefHeight="72.0" prefWidth="426.0" styleClass="navBarCategory">
+                     <children>
+                        <Text fill="WHITE" layoutX="53.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Install" textAlignment="CENTER" wrappingWidth="320.0">
+                           <font>
+                              <Font name="Abel Regular" size="29.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane layoutY="664.0" prefHeight="136.0" prefWidth="1280.0" style="-fx-background-color: #F0F0F0;">
+               <children>
+                  <Button layoutX="555.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#installSoftwares" prefHeight="51.0" prefWidth="170.0" style="-fx-background-color: #00B2EE; -fx-padding: 0px;" text="Install" textFill="WHITE">
+                     <font>
+                        <Font name="Abel Regular" size="32.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ProgressBar fx:id="installationProgress" layoutX="430.0" layoutY="80.0" prefHeight="29.0" prefWidth="420.0" progress="0.0" />
+                  <Text fx:id="progressText" layoutX="430.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" textAlignment="CENTER" wrappingWidth="420.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutY="72.0" prefHeight="593.0" prefWidth="1280.0">
+               <children>
+                  <ScrollPane fx:id="scroll_pane" hbarPolicy="NEVER" prefHeight="593.0" prefWidth="1280.0" vbarPolicy="ALWAYS">
+                     <content>
+                        <!--<VBox fx:id="softwareListContainer"  prefHeight="594.0" prefWidth="1280.0" />-->
+                     </content>
+                  </ScrollPane>
+               </children>
+            </Pane>
+         </children></Pane>
+   </children>
+</AnchorPane>

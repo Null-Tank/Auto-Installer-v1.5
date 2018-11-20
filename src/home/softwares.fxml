@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="softwaresPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.homeController">
+   <children>
+      <Pane prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #fff;" stylesheets="@../styles.css">
+         <children>
+            <Pane prefHeight="72.0" prefWidth="1280.0" style="-fx-background-color: #00b6ff;">
+               <children>
+                  <Pane layoutX="229.0" prefHeight="72.0" prefWidth="426.0" styleClass="navBarCategory">
+                     <children>
+                        <Text fill="WHITE" layoutX="53.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Softwares" textAlignment="CENTER" wrappingWidth="320.0">
+                           <font>
+                              <Font name="Abel Regular" size="29.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="655.0" onMouseClicked="#goToInstallation" prefHeight="72.0" prefWidth="426.0" styleClass="navBarCategory">
+                     <children>
+                        <Text fill="WHITE" layoutX="53.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Install" textAlignment="CENTER" wrappingWidth="320.0">
+                           <font>
+                              <Font name="Abel Regular" size="29.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="programSelectionDisplay" layoutX="230.0" layoutY="72.0" prefHeight="731.0" prefWidth="1053.0" style="-fx-background-color: white;" />
+            <Pane layoutY="72.0" prefHeight="731.0" prefWidth="231.0" style="-fx-background-color: #025272;">
+               <children>
+                  <Pane layoutY="58.0" onMouseClicked="#selectedGamingApplications" prefHeight="58.0" prefWidth="231.0" styleClass="softwareCategory">
+                     <children>
+                        <Text fill="WHITE" layoutX="4.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gaming" textAlignment="CENTER" wrappingWidth="224.0">
+                           <font>
+                              <Font name="Abel Regular" size="21.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Pane>
+                  <Pane layoutY="116.0" prefHeight="58.0" prefWidth="231.0" styleClass="softwareCategory">
+                     <children>
+                        <Text fill="WHITE" layoutX="4.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Workspace" textAlignment="CENTER" wrappingWidth="224.0">
+                           <font>
+                              <Font name="Abel Regular" size="21.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Pane>
+                  <Pane onMouseClicked="#selectedDeveloperIDEs" prefHeight="58.0" prefWidth="231.0" styleClass="softwareCategory">
+                     <children>
+                        <Text fill="WHITE" layoutX="4.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Software IDEs" textAlignment="CENTER" wrappingWidth="224.0">
+                           <font>
+                              <Font name="Abel Regular" size="21.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Pane>
+               </children>
+            </Pane>
+         </children></Pane>
+   </children>
+</AnchorPane>
