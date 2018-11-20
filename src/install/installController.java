@@ -154,7 +154,7 @@ public class installController {
                 String programJSON = mapper.writeValueAsString(selectedProgram);
                 Program program = mapper.readValue(programJSON, Program.class);
                 softwareNode =  creatSelectedSoftwareNode(program);
-                System.out.println(i);
+                softwareListContainer.getChildren().add(softwareNode);
             }
 
         }catch(JsonParseException ex){
@@ -165,12 +165,6 @@ public class installController {
         catch(IOException ex){
             System.out.println("Error: " + ex);
         }
-
-
-        System.out.println(softwareNode);
-        System.out.println(softwareListContainer);
-
-        softwareListContainer.getChildren().addAll(softwareNode);
 
     }
 
@@ -184,8 +178,6 @@ public class installController {
         softwareListContainer.setSpacing(0.0);
 
         scroll_pane.setContent(softwareListContainer);
-
-
 
     }
 
