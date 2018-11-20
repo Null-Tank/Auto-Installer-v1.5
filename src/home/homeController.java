@@ -248,8 +248,9 @@ public class homeController {
         primaryStage.setScene(installScene);
         System.out.println("Softwares to be installed... " + installController.softwareList);
         System.out.println(installController.softwareList == null);
-        if(installController.softwareList == null){
+        if(installController.softwareList == null || installController.softwareList.isEmpty()){
             System.out.println("softwareListContainer is NULL");
+            installController.softwareListContainer.getChildren().clear();
 
         }else{
             System.out.println("softwareListContainer is  not NULL");
