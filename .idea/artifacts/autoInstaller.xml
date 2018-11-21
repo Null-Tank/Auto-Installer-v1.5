@@ -1,23 +1,26 @@
 <component name="ArtifactManager">
   <artifact type="javafx" name="autoInstaller">
-    <output-path>$PROJECT_DIR$/../Auto-Installer</output-path>
+    <output-path>$PROJECT_DIR$/out/artifacts/autoInstaller</output-path>
     <properties id="javafx-properties">
       <options>
         <option name="appClass" value="Main" />
         <option name="description" value="" />
-        <option name="height" value="800" />
         <option name="htmlPlaceholderId" value="" />
-        <option name="nativeBundle" value="exe" />
+        <option name="nativeBundle" value="all" />
         <option name="title" value="" />
         <option name="vendor" value="" />
         <option name="version" value="" />
-        <option name="width" value="1280" />
       </options>
     </properties>
     <root id="root">
       <element id="archive" name="autoInstaller.jar">
         <element id="module-output" name="autoInstaller" />
       </element>
+      <element id="file-copy" path="$PROJECT_DIR$/libs/Jackson/jackson-annotations-2.9.0.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/libs/dropbox-core-sdk-3.0.8/dropbox-core-sdk-3.0.8.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/libs/Jackson/jackson-core-2.9.6.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/libs/Jackson/jackson-databind-2.9.6.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/libs/mslinks/mslinks.jar" />
     </root>
   </artifact>
 </component>

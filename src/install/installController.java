@@ -122,9 +122,6 @@ public class installController {
             public void handle(MouseEvent event) {
                 softwareList.remove(selectedProgram);
                 softwareToBeInstalled.remove(selectedProgram);
-                System.out.println("removed: " + selectedProgram);
-                System.out.println("softwareList[] = "+ softwareList);
-                System.out.println("softwareToBeInstalled[] =" + softwareToBeInstalled);
                 displaySelectedSoftware(softwareListContainer);
             }
         });
@@ -132,7 +129,7 @@ public class installController {
         // Software Image
         ImageView softwareImgContainer = new ImageView();
 
-        Image softwareImg = new Image("./icons/" + program.img_dir);
+        Image softwareImg = new Image("/icons/" + program.img_dir);
         softwareImgContainer.setImage(softwareImg);
 
         //System.out.println("Issue loading Image? " + softwareImg.isError());

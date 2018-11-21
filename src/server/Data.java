@@ -38,7 +38,7 @@ public class Data {
     public Data(){}
 
     // Updates the installation progress bar
-    public void updateProgressBar(ProgressBar progressBar,double progress){
+    public void updateProgressBar(ProgressBar progressBar, double progress){
         Thread progressThread = new Thread(){
             public void run(){
                 progressBar.setProgress(progress);
@@ -139,7 +139,7 @@ public class Data {
             mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
 
             // Obj location
-            String programsDataUrl = "./programs.json";
+            String programsDataUrl = System.getProperty("user.dir")+ "/programs.json";
 
             File programsJson = new File(programsDataUrl);
             // Indicates where the programs.json is being looked for
