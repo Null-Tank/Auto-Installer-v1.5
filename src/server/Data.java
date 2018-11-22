@@ -18,6 +18,8 @@ import com.dropbox.core.v2.DbxClientV2;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 
 import javafx.scene.control.ProgressBar;
 import javafx.scene.text.Text;
@@ -130,7 +132,7 @@ public class Data {
 
 
 
-    public static ProgramList getPrograms(){
+    public ProgramList getPrograms(){
 
         ProgramList programsData = null;
 
@@ -138,12 +140,15 @@ public class Data {
             ObjectMapper mapper = new ObjectMapper();
             mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
 
-            // Obj location
-            String programsDataUrl = System.getProperty("user.dir")+ "/programs.json";
+            // Ide Objs location
+            //String programsDataUrl = Data.class.getResource("/server/programs.json").getFile();
+
+            // Package Objs location
+            String programsDataUrl = this.getClass().getResource("/server/programs.json").getFile();
+
+            System.out.println(programsDataUrl);
 
             File programsJson = new File(programsDataUrl);
-            // Indicates where the programs.json is being looked for
-            System.out.println("Attempting to read from file in: "+ programsJson.getCanonicalPath());
 
             // Obj that contains the programs
             programsData = mapper.readValue(programsJson, ProgramList.class);

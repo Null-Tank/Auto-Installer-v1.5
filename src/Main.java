@@ -22,18 +22,36 @@ public class Main extends Application {
         System.out.println(System.getProperty("os.name"));
 
         // Sets Login Stage
-        FXMLLoader loginPaneLoader = new FXMLLoader(loginController.class.getResource("login.fxml"));
+
+        // IDE Fxml loader
+        //FXMLLoader loginPaneLoader = new FXMLLoader(loginController.class.getResource("login.fxml"));
+
+        // Packaged Fxml Loader
+        FXMLLoader loginPaneLoader = new FXMLLoader(getClass().getResource("/login/login.fxml"));
+
         Parent loginPane = loginPaneLoader.load();
         Scene loginScene = new Scene(loginPane, 1280, 800);
 
 
         // Sets Home Stage
-        FXMLLoader homePaneLoader = new FXMLLoader(homeController.class.getResource("softwares.fxml"));
+
+        // IDE Fxml loader
+        //FXMLLoader homePaneLoader = new FXMLLoader(homeController.class.getResource("/softwares.fxml"));
+
+        // Packaged Fxml Loader
+        FXMLLoader homePaneLoader = new FXMLLoader(getClass().getResource("/home/softwares.fxml"));
+
         Parent homePane = homePaneLoader.load();
         Scene homeScene = new Scene(homePane, 1280, 800);
 
         // Sets Install Stage
-        FXMLLoader installPaneLoader = new FXMLLoader(installController.class.getResource("install.fxml"));
+
+
+        // IDE Fxml Loader
+        //FXMLLoader installPaneLoader = new FXMLLoader(installController.class.getResource("/install.fxml"));
+        // Packaged Fxml Loader
+        FXMLLoader installPaneLoader = new FXMLLoader(getClass().getResource("/install/install.fxml"));
+
         Parent installPane = installPaneLoader.load();
         Scene installScene = new Scene(installPane, 1280, 800);
 
@@ -57,7 +75,6 @@ public class Main extends Application {
         primaryStage.show();
 
     }
-
 
     public static void main(String[] args) throws DbxException, IOException {
         launch(args);
