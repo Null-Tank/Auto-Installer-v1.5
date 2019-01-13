@@ -1,7 +1,6 @@
 package server;
 
 import com.dropbox.core.DbxDownloader;
-import com.dropbox.core.v2.files.DownloadErrorException;
 import com.dropbox.core.v2.files.FileMetadata;
 import home.ProgramList;
 
@@ -14,17 +13,11 @@ import com.dropbox.core.DbxException;
 import com.dropbox.core.DbxRequestConfig;
 import com.dropbox.core.v2.DbxClientV2;
 
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
+import java.io.*;
 
 import javafx.scene.control.ProgressBar;
 import javafx.scene.text.Text;
 import mslinks.ShellLink;
-import install.installController;
 
 public class Data {
 
@@ -130,8 +123,6 @@ public class Data {
     }
 
 
-
-
     public ProgramList getPrograms(){
 
         ProgramList programsData = null;
@@ -141,16 +132,10 @@ public class Data {
             mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
 
             // Ide Objs location
-            //String programsDataUrl = Data.class.getResource("/server/programs.json").getFile();
-
+            //String programsDataUrl = this.getClass().getResource("/server/programs.json").getFile();
             // Package Objs location
-            String programsDataUrl = this.getClass().getResource("/server/programs.json").getFile();
-
-            System.out.println(programsDataUrl);
-
-            File programsJson = new File(programsDataUrl);
-
-            // Obj that contains the programs
+            InputStream programsJson = this.getClass().getResourceAsStream("/server/programs.json");
+            
             programsData = mapper.readValue(programsJson, ProgramList.class);
 
         }

@@ -12,6 +12,7 @@ import server.Data;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class Main extends Application {
 
@@ -27,7 +28,7 @@ public class Main extends Application {
         //FXMLLoader loginPaneLoader = new FXMLLoader(loginController.class.getResource("login.fxml"));
 
         // Packaged Fxml Loader
-        FXMLLoader loginPaneLoader = new FXMLLoader(getClass().getResource("/login/login.fxml"));
+        FXMLLoader loginPaneLoader = new FXMLLoader(this.getClass().getResource("/login/login.fxml"));
 
         Parent loginPane = loginPaneLoader.load();
         Scene loginScene = new Scene(loginPane, 1280, 800);

@@ -67,6 +67,14 @@ public class homeController {
         displayGamingApplications();
     }
 
+    // Displays gamingApplications if selected
+    @FXML private void selectedWorkspaceApplications(){
+        selectedSoftwareCategory = "WorkspaceApplications";
+        displayWorkspaceApplications();
+    }
+
+
+
 
     private String selectedSoftwareCategory = "DeveloperIDEs";
 
@@ -170,6 +178,57 @@ public class homeController {
         }
     }
 
+    private void displayWorkspaceApplications(){
+        var gridX = -1;
+        var gridY = 0;
+
+        softwareDisplay.getChildren().clear();
+        softwareDisplay.setHgap(10); //horizontal gap in pixels => that's what you are asking for
+        softwareDisplay.setVgap(10); //vertical gap in pixels
+        softwareDisplay.setPadding(new Insets(10,10,10,10)); //margins around the whole grid
+
+        mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
+
+        var programsData = data.getPrograms();
+
+        //Gets the properties for all of the gaming applications
+        try{
+            for (int i = 0; programsData.workspaceApplications.length > i; i++) {
+
+                Object selectedProgram = programsData.getWorkspaceApplications()[i];
+                String programJSON = mapper.writeValueAsString(selectedProgram);
+                Program program = mapper.readValue(programJSON, Program.class);
+
+
+                Pane softwareContainer = createSoftwareNode(program);
+
+
+                // Determines in which cell the software will be displayed in
+                if(gridX < 4){
+                    gridX++;
+
+                }else{
+                    gridX = 0;
+                    gridY++;
+                }
+
+                System.out.println(gridX + " " + gridY);
+                softwareDisplay.add(softwareContainer, gridX, gridY); // column, row
+
+                System.out.println(program.name + " " + program.version);
+            }
+        }catch (JsonParseException e) {
+            e.printStackTrace();
+        }
+        catch (JsonMappingException e) {
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     // Method for creating software nodes
     public static Pane createSoftwareNode(Program program){
@@ -238,6 +297,7 @@ public class homeController {
 
     }
 
+
     private Scene installScene;
 
     public void setInstallScene(Scene scene){
@@ -272,6 +332,8 @@ public class homeController {
         }
         else if(selectedSoftwareCategory == "GamingApplications") {
             displayGamingApplications();
+        }else if(selectedSoftwareCategory == "WorkspaceApplications"){
+            displayWorkspaceApplications();
         }
     }
 

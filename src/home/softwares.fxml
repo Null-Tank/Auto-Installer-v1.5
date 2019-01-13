@@ -49,7 +49,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Pane>
-                  <Pane layoutY="116.0" prefHeight="58.0" prefWidth="231.0" styleClass="softwareCategory">
+                  <Pane onMouseClicked="#selectedWorkspaceApplications" layoutY="116.0" prefHeight="58.0" prefWidth="231.0" styleClass="softwareCategory">
                      <children>
                         <Text fill="WHITE" layoutX="4.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Workspace" textAlignment="CENTER" wrappingWidth="224.0">
                            <font>

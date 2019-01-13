@@ -4,14 +4,14 @@
       "name": "Steam",
       "exeName":"Steam.exe",
       "img_dir":"steam.png",
-      "category": "gamingApplications",
+      "category": "GamingApplications",
       "version":1.2
     },
     {
       "name":"Epic Games",
       "exeName":"",
       "img_dir":"steam.png",
-      "category": "gamingApplication",
+      "category": "GamingApplication",
       "version":1.2
     }
   ],
@@ -72,6 +72,17 @@
       "category": "IDEs",
       "version": 1.2
     }
+  ],
+
+  "workspaceApplications":[
+    {
+      "name": "Slack",
+      "exeName":"slack.exe",
+      "img_dir":"slack.png",
+      "category": "WorkspaceApplications",
+      "version":1.2
+    }
   ]
+
 
 }

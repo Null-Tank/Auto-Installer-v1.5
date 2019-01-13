@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Main-Class: Main
+Class-Path: jackson-annotations-2.9.0.jar jackson-core-2.9.6.jar jackson-databind-2.9.6.jar dropbox-core-sdk-3.0.8.jar mslinks.jar
+
+
