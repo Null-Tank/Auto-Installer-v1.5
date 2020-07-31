@@ -1,4 +1,4 @@
-# Auto-Installer
+# Auto-Installer (No longer being developed)
 An application that makes installing large amounts of software easy by doing them for you!
 <br/>
 ## Who is this for?
