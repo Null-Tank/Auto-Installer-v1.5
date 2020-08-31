@@ -1,8 +1,8 @@
-# Website
+# Website (Doesn't contain latest software download)
 https://auto-installer.web.app/
 <br/>
 # Auto-Installer (No longer being developed)
-An application that makes installing large amounts of software easy by doing them for you! Sadly, the program no longer works as the file server for the program is no longer running.
+An application that makes installing large amounts of software easy by doing them for you!
 <br/>
 ## Who is this for?
 This software is directed mostly to people handling a large number of computers and want a way to install programs onto them with ease. Its mean to install developer tools and some other miscellaneous programs.
