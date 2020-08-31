@@ -1,5 +1,5 @@
 # Website
-https://auto-installer.firebaseapp.com/
+https://auto-installer.web.app/
 <br/>
 # Auto-Installer (No longer being developed)
 An application that makes installing large amounts of software easy by doing them for you! Sadly, the program no longer works as the file server for the program is no longer running.
