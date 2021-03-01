@@ -21,7 +21,7 @@ import mslinks.ShellLink;
 
 public class Data {
 
-    private static final String ACCESS_TOKEN = "Ga6TgeGiiUAAAAAAAAAAghSFY_3xsNKD3u8UKUR4D-DYoSsSjFfoecn1rvrimVnK";
+    private static final String ACCESS_TOKEN = "API TOKEN";
     private DbxRequestConfig config = DbxRequestConfig.newBuilder("dropbox/java-tutorial").build();
     private DbxClientV2 client = new DbxClientV2(config, ACCESS_TOKEN);
     private UnzipUtility unzipUtility = new UnzipUtility();
